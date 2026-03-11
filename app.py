@@ -14,59 +14,91 @@ st.set_page_config(
 if "user" in st.session_state:
     st.switch_page("pages/1_Home.py")
 
-# --- Custom CSS (Modern Vintage) ---
+# --- Custom CSS (Retro-Modern Funky) ---
 def local_css():
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
     .stApp {
-        background-color: #f5e6c8;
-        background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
-        color: #2c1810;
-        font-family: 'Libre Baskerville', serif;
+        background-color: #0d0d0d;
+        color: #f5f0e8;
+        font-family: 'Crimson Text', serif;
+        animation: fadeIn 0.4s ease;
     }
 
-    /* Hide Streamlit Defaults */
     #MainMenu, footer, header {visibility: hidden;}
 
-    .login-container {
-        background: rgba(255, 255, 255, 0.5);
-        padding: 40px;
-        border-radius: 10px;
-        border: 2px solid #1a2744;
-        box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-        margin-top: 50px;
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; background: #0d0d0d; }
+    ::-webkit-scrollbar-thumb { background: #ff6b35; border-radius: 4px; }
+
+    /* Inputs */
+    [data-testid="stTextInput"] input, [data-testid="stPasswordInput"] input {
+        background-color: #0d0d0d !important;
+        border: none !important;
+        border-bottom: 2px solid #ff6b35 !important;
+        border-radius: 0 !important;
+        color: #f5f0e8 !important;
+        font-family: 'Space Mono', monospace !important;
+    }
+    [data-testid="stTextInput"] input:focus, [data-testid="stPasswordInput"] input:focus {
+        box-shadow: none !important;
+        border-bottom: 2px solid #fbbf24 !important;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        background-color: #0d0d0d !important;
+        color: #ff6b35 !important;
+        font-family: 'Bebas Neue', display !important;
+        font-size: 1.5rem !important;
+        letter-spacing: 2px !important;
+        border: 2px solid #ff6b35 !important;
+        border-radius: 0 !important;
+        text-transform: uppercase !important;
+        padding: 5px 20px !important;
+        transition: all 0.3s ease !important;
+    }
+    .stButton > button:hover {
+        background-color: #ff6b35 !important;
+        color: #0d0d0d !important;
     }
 
     h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        color: #1a2744;
+        font-family: 'Bebas Neue', display;
+        font-size: 4rem;
+        color: #ff6b35;
         text-align: center;
-        margin-bottom: 30px;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
     }
-
+    
     .stTabs [data-baseweb="tab-list"] {
         justify-content: center;
         background-color: transparent;
+        border-bottom: 1px solid #7c3aed;
     }
-
     .stTabs [data-baseweb="tab"] {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem;
-        color: #1a2744;
+        font-family: 'Space Mono', monospace;
+        font-size: 1rem;
+        color: #a8a29e;
+    }
+    
+    /* ASCII Art wrapper */
+    .ascii-art {
+        font-family: 'Space Mono', monospace;
+        color: #7c3aed;
+        white-space: pre;
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-size: 12px;
     }
 
-    .stButton > button {
-        background-color: #1a2744 !important;
-        color: white !important;
-        width: 100%;
-        font-family: 'Playfair Display', serif !important;
-        font-weight: bold !important;
-        border: none !important;
-        padding: 10px !important;
-        box-shadow: 3px 3px 0px #c4622d !important;
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
     </style>
     """, unsafe_allow_html=True)
@@ -74,28 +106,40 @@ def local_css():
 local_css()
 
 # --- Page Header ---
-st.markdown("<div style='text-align: center; font-size: 4rem;'>📖</div>", unsafe_allow_html=True)
-st.markdown("<h1>The Vintage Library</h1>", unsafe_allow_html=True)
+# ASCII Mascot
+st.markdown("""
+<div class="ascii-art">
+   /\\_____/\\
+  (  o   o  )
+  (  =^=   )
+   (        )
+  THE VINTAGE
+    LIBRARY
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("<h1>ENTER THE ARCHIVE</h1>", unsafe_allow_html=True)
+st.write("")
 
 # --- Auth Logic ---
 supabase = get_supabase()
 
-tab_login, tab_signup = st.tabs(["📜 Log In", "✍️ Sign Up"])
+tab_login, tab_signup = st.tabs(["[ LOG IN ]", "[ SIGN UP ]"])
 
 with tab_login:
     with st.form("login_form"):
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
-        submit = st.form_submit_button("Enter the Library")
+        email = st.text_input("EMAIL", label_visibility="collapsed", placeholder="EMAIL")
+        password = st.text_input("PASSWORD", type="password", label_visibility="collapsed", placeholder="PASSWORD")
+        st.write("")
+        submit = st.form_submit_button("ENTER THE LIBRARY")
 
         if submit:
             try:
                 response = supabase.auth.sign_in_with_password({"email": email, "password": password})
                 if response.user:
                     st.session_state["user"] = response.user
-                    # Typically Supabase metadata or a profile table holds the username
                     st.session_state["username"] = email.split('@')[0] 
-                    st.success("Authentication successful! Opening the vault...")
+                    st.success("AUTHENTICATION SUCCESSFUL! OPENING DOORS...")
                     time.sleep(1)
                     st.switch_page("pages/1_Home.py")
             except Exception as e:
@@ -103,17 +147,18 @@ with tab_login:
 
 with tab_signup:
     with st.form("signup_form"):
-        username = st.text_input("Username")
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
-        confirm_password = st.text_input("Confirm Password", type="password")
-        submit = st.form_submit_button("Join the Archive")
+        username = st.text_input("USERNAME", label_visibility="collapsed", placeholder="USERNAME")
+        email = st.text_input("EMAIL", label_visibility="collapsed", placeholder="EMAIL")
+        password = st.text_input("PASSWORD", type="password", label_visibility="collapsed", placeholder="PASSWORD")
+        confirm_password = st.text_input("CONFIRM PASSWORD", type="password", label_visibility="collapsed", placeholder="CONFIRM PASSWORD")
+        st.write("")
+        submit = st.form_submit_button("JOIN THE ARCHIVE")
 
         if submit:
             if password != confirm_password:
-                st.error("Passwords do not match.")
+                st.error("PASSWORDS DO NOT MATCH.")
             elif len(password) < 6:
-                st.error("Password must be at least 6 characters.")
+                st.error("PASSWORD MUST BE AT LEAST 6 CHARACTERS.")
             else:
                 try:
                     response = supabase.auth.sign_up({
@@ -122,6 +167,6 @@ with tab_signup:
                         "options": {"data": {"username": username}}
                     })
                     if response.user:
-                        st.info("Registration successful! Check your email to confirm your account before logging in.")
+                        st.info("REGISTRATION SUCCESSFUL! CHECK YOUR EMAIL TO CONFIRM.")
                 except Exception as e:
                     st.error(f"Sign up failed: {str(e)}")
