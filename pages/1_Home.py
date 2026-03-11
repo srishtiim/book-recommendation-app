@@ -291,8 +291,18 @@ st.markdown("</div>", unsafe_allow_html=True)
 if len(selected_genres) > 3:
     st.error("MAX 3 GENRES.")
 
+if "show_books" not in st.session_state:
+    st.session_state["show_books"] = False
+
+# Reset show_books if no genres selected
+if len(selected_genres) == 0:
+    st.session_state["show_books"] = False
+
 if 0 < len(selected_genres) <= 3:
     if st.button("FIND BOOKS", use_container_width=True):
+        st.session_state["show_books"] = True
+
+    if st.session_state.get("show_books", False):
         st.markdown("<hr style='border-top: 1px dashed #ff6b35; margin: 40px 0;'>", unsafe_allow_html=True)
         st.markdown("<h2 style='font-family: Bebas Neue; color: #fbbf24; font-size: 3rem; text-align: center;'>[ RECOMMENDED MATCHES ]</h2>", unsafe_allow_html=True)
         
