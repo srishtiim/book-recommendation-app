@@ -1,0 +1,1322 @@
+[
+    {
+        "title": "The Call of the Wild",
+        "author": "Jack London",
+        "genres": [
+            "Adventure",
+            "Classic Literature"
+        ],
+        "description": "A dog's journey from domestic life to the harsh wilderness of the Yukon. He must learn to survive and thrive.",
+        "mood": "dark",
+        "pages": 250
+    },
+    {
+        "title": "Treasure Island",
+        "author": "Robert Louis Stevenson",
+        "genres": [
+            "Adventure",
+            "Classic Literature"
+        ],
+        "description": "A young boy goes on a perilous voyage in search of buried pirate treasure. He meets the infamous Long John Silver.",
+        "mood": "epic",
+        "pages": 300
+    },
+    {
+        "title": "Life of Pi",
+        "author": "Yann Martel",
+        "genres": [
+            "Adventure",
+            "Drama"
+        ],
+        "description": "A young boy is stranded on a lifeboat with a Bengal tiger. They must survive the open ocean.",
+        "mood": "uplifting",
+        "pages": 350
+    },
+    {
+        "title": "Into the Wild",
+        "author": "Jon Krakauer",
+        "genres": [
+            "Adventure",
+            "Biography"
+        ],
+        "description": "The true story of Christopher McCandless journey into the Alaskan wilderness. A tragic tale of idealism and nature.",
+        "mood": "dark",
+        "pages": 320
+    },
+    {
+        "title": "The Count of Monte Cristo",
+        "author": "Alexandre Dumas",
+        "genres": [
+            "Adventure",
+            "Historical Fiction"
+        ],
+        "description": "A man is wrongfully imprisoned and escapes to seek revenge on his betrayers. A sweeping tale of justice and retribution.",
+        "mood": "epic",
+        "pages": 1200
+    },
+    {
+        "title": "Jurassic Park",
+        "author": "Michael Crichton",
+        "genres": [
+            "Adventure",
+            "Science Fiction",
+            "Thriller"
+        ],
+        "description": "Scientists clone dinosaurs for a theme park, but the creatures escape. A thrilling battle for survival ensues.",
+        "mood": "dark",
+        "pages": 400
+    },
+    {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "genres": [
+            "Adventure",
+            "Fantasy"
+        ],
+        "description": "A reluctant hobbit joins a group of dwarves to reclaim their mountain home from a dragon. A classic epic journey.",
+        "mood": "cosy",
+        "pages": 310
+    },
+    {
+        "title": "Around the World in Eighty Days",
+        "author": "Jules Verne",
+        "genres": [
+            "Adventure",
+            "Classic Literature"
+        ],
+        "description": "An eccentric Englishman attempts to circumnavigate the globe in 80 days to win a wager. A fast-paced global romp.",
+        "mood": "uplifting",
+        "pages": 250
+    },
+    {
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "genres": [
+            "Adventure",
+            "Science Fiction"
+        ],
+        "description": "An astronaut is stranded on Mars and must use his wit to survive. A gripping tale of resilience.",
+        "mood": "epic",
+        "pages": 369
+    },
+    {
+        "title": "Hatchet",
+        "author": "Gary Paulsen",
+        "genres": [
+            "Adventure"
+        ],
+        "description": "A boy whose plane crashes in the Canadian wilderness must learn to survive alone. A story of resilience and maturity.",
+        "mood": "dark",
+        "pages": 195
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genres": [
+            "Drama",
+            "Classic Literature"
+        ],
+        "description": "A coming-of-age story about racial injustice in the American South. Seen through the eyes of a young girl.",
+        "mood": "dark",
+        "pages": 281
+    },
+    {
+        "title": "The Kite Runner",
+        "author": "Khaled Hosseini",
+        "genres": [
+            "Drama",
+            "Historical Fiction"
+        ],
+        "description": "A boy from Kabul struggles with guilt over betraying his best friend. A sprawling story of redemption.",
+        "mood": "dark",
+        "pages": 371
+    },
+    {
+        "title": "Little Women",
+        "author": "Louisa May Alcott",
+        "genres": [
+            "Drama",
+            "Classic Literature",
+            "Romance"
+        ],
+        "description": "Four sisters grow up during the American Civil War. They navigate love, ambition, and sibling bonds.",
+        "mood": "cosy",
+        "pages": 449
+    },
+    {
+        "title": "A Thousand Splendid Suns",
+        "author": "Khaled Hosseini",
+        "genres": [
+            "Drama",
+            "Historical Fiction"
+        ],
+        "description": "The lives of two Afghan women intertwine during decades of war. A heartbreaking story of female solidarity.",
+        "mood": "dark",
+        "pages": 432
+    },
+    {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "genres": [
+            "Drama",
+            "Historical Fiction"
+        ],
+        "description": "A young girl in Nazi Germany steals books and shares them with others. Narrated by Death itself.",
+        "mood": "uplifting",
+        "pages": 552
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genres": [
+            "Drama",
+            "Classic Literature"
+        ],
+        "description": "A mysterious millionaire's obsession with a beautiful socialite in the Jazz Age. A tragic look at the American Dream.",
+        "mood": "mysterious",
+        "pages": 180
+    },
+    {
+        "title": "Normal People",
+        "author": "Sally Rooney",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "description": "The complex on-again, off-again relationship between two Irish teenagers. A modern exploration of intimacy and class.",
+        "mood": "mysterious",
+        "pages": 266
+    },
+    {
+        "title": "A Little Life",
+        "author": "Hanya Yanagihara",
+        "genres": [
+            "Drama"
+        ],
+        "description": "Four college friends navigate life in New York, centered on one's traumatic past. A devastating emotional journey.",
+        "mood": "dark",
+        "pages": 814
+    },
+    {
+        "title": "The Color Purple",
+        "author": "Alice Walker",
+        "genres": [
+            "Drama",
+            "Historical Fiction"
+        ],
+        "description": "A young Black woman struggles to find her identity and voice in the South. A powerful story of resilience.",
+        "mood": "uplifting",
+        "pages": 295
+    },
+    {
+        "title": "Where the Crawdads Sing",
+        "author": "Delia Owens",
+        "genres": [
+            "Drama",
+            "Mystery"
+        ],
+        "description": "A girl raised by the marshlands of North Carolina becomes a suspect in a murder. A blend of nature writing and mystery.",
+        "mood": "mysterious",
+        "pages": 368
+    },
+    {
+        "title": "And Then There Were None",
+        "author": "Agatha Christie",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "Ten strangers are invited to an isolated island and picked off one by one. The ultimate whodunit puzzle.",
+        "mood": "dark",
+        "pages": 272
+    },
+    {
+        "title": "The Hound of the Baskervilles",
+        "author": "Arthur Conan Doyle",
+        "genres": [
+            "Mystery",
+            "Classic Literature"
+        ],
+        "description": "Sherlock Holmes investigates a demonic hound haunting a noble family. A quintessential detective classic.",
+        "mood": "mysterious",
+        "pages": 256
+    },
+    {
+        "title": "Gone Girl",
+        "author": "Gillian Flynn",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "A woman disappears on her wedding anniversary and her husband becomes the prime suspect. A twisted tale of a toxic marriage.",
+        "mood": "dark",
+        "pages": 415
+    },
+    {
+        "title": "The Girl with the Dragon Tattoo",
+        "author": "Stieg Larsson",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "A journalist and a hacker investigate the decades-old disappearance of a young woman. A dark, gripping procedural.",
+        "mood": "dark",
+        "pages": 465
+    },
+    {
+        "title": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "A forensic psychotherapist tries to treat a famous artist who stopped speaking after shooting her husband. Unraveling the truth.",
+        "mood": "mysterious",
+        "pages": 336
+    },
+    {
+        "title": "Murder on the Orient Express",
+        "author": "Agatha Christie",
+        "genres": [
+            "Mystery"
+        ],
+        "description": "Hercule Poirot must find a killer among the passengers of a luxurious train stuck in the snow. A masterclass in plotting.",
+        "mood": "cosy",
+        "pages": 274
+    },
+    {
+        "title": "Big Little Lies",
+        "author": "Liane Moriarty",
+        "genres": [
+            "Mystery",
+            "Drama"
+        ],
+        "description": "Wealthy mothers at a school get caught up in a web of rumors that leads to murder. A sharp domestic thriller.",
+        "mood": "mysterious",
+        "pages": 460
+    },
+    {
+        "title": "In the Woods",
+        "author": "Tana French",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "A detective investigates a child's murder in the same woods where he lost his friends as a boy. A haunting character study.",
+        "mood": "dark",
+        "pages": 429
+    },
+    {
+        "title": "Sharp Objects",
+        "author": "Gillian Flynn",
+        "genres": [
+            "Mystery",
+            "Thriller"
+        ],
+        "description": "A flawed reporter returns to her hometown to cover a series of child murders. A deeply unsettling psychological mystery.",
+        "mood": "dark",
+        "pages": 254
+    },
+    {
+        "title": "The Thursday Murder Club",
+        "author": "Richard Osman",
+        "genres": [
+            "Mystery",
+            "Comedy"
+        ],
+        "description": "Four elderly residents in a retirement village secretly investigate unsolved mysteries. Things get real when a local is killed.",
+        "mood": "cosy",
+        "pages": 382
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genres": [
+            "Romance",
+            "Classic Literature"
+        ],
+        "description": "Elizabeth Bennet navigates manners, morality, and marriage in 19th century England. An enduring enemies-to-lovers tale.",
+        "mood": "romantic",
+        "pages": 279
+    },
+    {
+        "title": "Outlander",
+        "author": "Diana Gabaldon",
+        "genres": [
+            "Romance",
+            "Historical Fiction",
+            "Fantasy"
+        ],
+        "description": "A WW2 nurse is transported back to 1743 Scotland and falls in love with a Highlander warrior. Epic, sweeping romance.",
+        "mood": "epic",
+        "pages": 850
+    },
+    {
+        "title": "The Notebook",
+        "author": "Nicholas Sparks",
+        "genres": [
+            "Romance",
+            "Drama"
+        ],
+        "description": "An enduring love story read from a faded notebook to an Alzheimer's patient. A heartbreaking testament to true love.",
+        "mood": "romantic",
+        "pages": 214
+    },
+    {
+        "title": "Me Before You",
+        "author": "Jojo Moyes",
+        "genres": [
+            "Romance",
+            "Drama"
+        ],
+        "description": "A young woman becomes caregiver for a wealthy, paralyzed man, changing both their lives. A heartwarming tearjerker.",
+        "mood": "uplifting",
+        "pages": 369
+    },
+    {
+        "title": "The Hating Game",
+        "author": "Sally Thorne",
+        "genres": [
+            "Romance",
+            "Comedy"
+        ],
+        "description": "Two executive assistants absolutely despise each other, until they compete for a major promotion. A witty office romance.",
+        "mood": "cosy",
+        "pages": 365
+    },
+    {
+        "title": "Red, White & Royal Blue",
+        "author": "Casey McQuiston",
+        "genres": [
+            "Romance",
+            "Comedy"
+        ],
+        "description": "The First Son of the US and the Prince of Wales fake a friendship that blossoms into love. Heartwarming and political.",
+        "mood": "uplifting",
+        "pages": 421
+    },
+    {
+        "title": "Beach Read",
+        "author": "Emily Henry",
+        "genres": [
+            "Romance",
+            "Comedy"
+        ],
+        "description": "Two rival authors with writer's block spend the summer in neighboring beach houses. A tender look at grief and love.",
+        "mood": "romantic",
+        "pages": 361
+    },
+    {
+        "title": "The Fault in Our Stars",
+        "author": "John Green",
+        "genres": [
+            "Romance",
+            "Drama"
+        ],
+        "description": "Two teenage cancer patients meet in a support group and embark on a bittersweet journey. Tragically beautiful.",
+        "mood": "dark",
+        "pages": 313
+    },
+    {
+        "title": "Bridgerton: The Duke and I",
+        "author": "Julia Quinn",
+        "genres": [
+            "Romance",
+            "Historical Fiction"
+        ],
+        "description": "Daphne Bridgerton enters a fake courtship with dynamic Duke of Hastings. They soon develop real feelings.",
+        "mood": "romantic",
+        "pages": 384
+    },
+    {
+        "title": "Normal People",
+        "author": "Sally Rooney",
+        "genres": [
+            "Romance",
+            "Drama"
+        ],
+        "description": "A complex look at two people who can't stay away from each other. Intense and profoundly modern.",
+        "mood": "mysterious",
+        "pages": 273
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "description": "A diverse fellowship embarks on a quest to destroy the One Ring and defeat a dark lord. The pinnacle of high fantasy.",
+        "mood": "epic",
+        "pages": 1178
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "author": "J.K. Rowling",
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "description": "An orphaned boy discovers he is a wizard and attends a magical school. A charming introduction to a massive universe.",
+        "mood": "cosy",
+        "pages": 309
+    },
+    {
+        "title": "The Name of the Wind",
+        "author": "Patrick Rothfuss",
+        "genres": [
+            "Fantasy"
+        ],
+        "description": "The autobiography of a legendary wizard and musician as he recounts his tragic life. Lyrical and deep.",
+        "mood": "epic",
+        "pages": 662
+    },
+    {
+        "title": "A Game of Thrones",
+        "author": "George R.R. Martin",
+        "genres": [
+            "Fantasy",
+            "Drama"
+        ],
+        "description": "Noble families fight for control of the Iron Throne in a gritty, realistic fantasy setting. Politics and dragons.",
+        "mood": "dark",
+        "pages": 835
+    },
+    {
+        "title": "The Way of Kings",
+        "author": "Brandon Sanderson",
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "description": "A massive epic of storms, shattered magic, and warriors trying to save their world. Immense worldbuilding.",
+        "mood": "epic",
+        "pages": 1007
+    },
+    {
+        "title": "Mistborn: The Final Empire",
+        "author": "Brandon Sanderson",
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "description": "A crew of thieves plans a massive heist against an immortal tyrant. A unique magic system based on metals.",
+        "mood": "uplifting",
+        "pages": 541
+    },
+    {
+        "title": "The Night Circus",
+        "author": "Erin Morgenstern",
+        "genres": [
+            "Fantasy",
+            "Romance"
+        ],
+        "description": "Two young illusionists are bound in a magical, lifelong competition within a mysterious circus. Atmospheric and gorgeous.",
+        "mood": "mysterious",
+        "pages": 387
+    },
+    {
+        "title": "American Gods",
+        "author": "Neil Gaiman",
+        "genres": [
+            "Fantasy",
+            "Mystery"
+        ],
+        "description": "An ex-convict is drawn into a brewing war between old mythological gods and new technological ones. A bizarre road trip.",
+        "mood": "dark",
+        "pages": 465
+    },
+    {
+        "title": "The Lies of Locke Lamora",
+        "author": "Scott Lynch",
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "description": "A group of elite con artists plans their ultimate heist in a complex fantasy city. Snappy dialogue and twists.",
+        "mood": "epic",
+        "pages": 499
+    },
+    {
+        "title": "Good Omens",
+        "author": "Terry Pratchett & Neil Gaiman",
+        "genres": [
+            "Fantasy",
+            "Comedy"
+        ],
+        "description": "An angel and a demon team up to prevent the Apocalypse. Hilarious and utterly charming.",
+        "mood": "cosy",
+        "pages": 412
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "genres": [
+            "Science Fiction",
+            "Adventure"
+        ],
+        "description": "A young nobleman fights for control of a desert planet that holds the universe's most valuable resource. Dense political sci-fi.",
+        "mood": "epic",
+        "pages": 412
+    },
+    {
+        "title": "Foundation",
+        "author": "Isaac Asimov",
+        "genres": [
+            "Science Fiction"
+        ],
+        "description": "A mathematician predicts the fall of a galactic empire and establishes a foundation to save civilization. Mind-expanding.",
+        "mood": "epic",
+        "pages": 255
+    },
+    {
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "genres": [
+            "Science Fiction",
+            "Adventure"
+        ],
+        "description": "An astronaut uses hard science to survive alone on Mars. Tense, funny, and incredibly detailed.",
+        "mood": "uplifting",
+        "pages": 369
+    },
+    {
+        "title": "Neuromancer",
+        "author": "William Gibson",
+        "genres": [
+            "Science Fiction",
+            "Thriller"
+        ],
+        "description": "A washed-up computer hacker is hired for an ultimate heist. The birth of cyberpunk.",
+        "mood": "dark",
+        "pages": 271
+    },
+    {
+        "title": "The Left Hand of Darkness",
+        "author": "Ursula K. Le Guin",
+        "genres": [
+            "Science Fiction",
+            "Drama"
+        ],
+        "description": "An emissary travels to a planet where the inhabitants have no fixed gender. A profound exploration of society.",
+        "mood": "uplifting",
+        "pages": 304
+    },
+    {
+        "title": "Ender's Game",
+        "author": "Orson Scott Card",
+        "genres": [
+            "Science Fiction",
+            "Drama"
+        ],
+        "description": "Child prodigies are trained in zero gravity to fight an impending alien invasion. Gripping and psychologically intense.",
+        "mood": "mysterious",
+        "pages": 324
+    },
+    {
+        "title": "Snow Crash",
+        "author": "Neal Stephenson",
+        "genres": [
+            "Science Fiction",
+            "Comedy"
+        ],
+        "description": "A hacker/pizza deliverer discovers a deadly new linguistic virus in the Metaverse. Wildly inventive satire.",
+        "mood": "epic",
+        "pages": 440
+    },
+    {
+        "title": "Hyperion",
+        "author": "Dan Simmons",
+        "genres": [
+            "Science Fiction",
+            "Mystery"
+        ],
+        "description": "Seven pilgrims travel to mysterious tombs on a distant world, sharing their stories. A sci-fi Canterbury Tales.",
+        "mood": "dark",
+        "pages": 482
+    },
+    {
+        "title": "The Three-Body Problem",
+        "author": "Cixin Liu",
+        "genres": [
+            "Science Fiction",
+            "Mystery"
+        ],
+        "description": "Humanity makes first contact with an alien civilization that is destined to destroy them. Hard sci-fi with massive scope.",
+        "mood": "epic",
+        "pages": 399
+    },
+    {
+        "title": "Do Androids Dream of Electric Sheep?",
+        "author": "Philip K. Dick",
+        "genres": [
+            "Science Fiction",
+            "Thriller"
+        ],
+        "description": "A bounty hunter tracks down rogue androids in a post-apocalyptic Earth. A seminal philosophical sci-fi work.",
+        "mood": "dark",
+        "pages": 210
+    },
+    {
+        "title": "The Shining",
+        "author": "Stephen King",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "description": "A father takes his family to run a remote, deeply haunted hotel over the winter. Isolation breeds madness.",
+        "mood": "dark",
+        "pages": 447
+    },
+    {
+        "title": "It",
+        "author": "Stephen King",
+        "genres": [
+            "Horror",
+            "Drama"
+        ],
+        "description": "A group of childhood friends reunites to defeat a shape-shifting monster. An epic coming-of-age nightmare.",
+        "mood": "dark",
+        "pages": 1138
+    },
+    {
+        "title": "The Haunting of Hill House",
+        "author": "Shirley Jackson",
+        "genres": [
+            "Horror",
+            "Classic Literature"
+        ],
+        "description": "Four people spend the summer in a notoriously haunted house. A pinnacle of psychological horror.",
+        "mood": "mysterious",
+        "pages": 246
+    },
+    {
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "genres": [
+            "Horror",
+            "Science Fiction",
+            "Classic Literature"
+        ],
+        "description": "A scientist brings a creature to life but rejects it, leading to tragic consequences. A brilliant gothic tale.",
+        "mood": "dark",
+        "pages": 280
+    },
+    {
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "genres": [
+            "Horror",
+            "Classic Literature"
+        ],
+        "description": "An ancient vampire leaves Transylvania to spread his curse to London. The definitive vampire novel.",
+        "mood": "dark",
+        "pages": 418
+    },
+    {
+        "title": "Pet Sematary",
+        "author": "Stephen King",
+        "genres": [
+            "Horror",
+            "Drama"
+        ],
+        "description": "A doctor discovers a burial ground that can bring the dead back to life, with horrific results. Deeply unsettling.",
+        "mood": "dark",
+        "pages": 374
+    },
+    {
+        "title": "The Silence of the Lambs",
+        "author": "Thomas Harris",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "description": "An FBI trainee seeks the advice of a cannibalistic serial killer to catch another murderer. Tense and chilling.",
+        "mood": "dark",
+        "pages": 338
+    },
+    {
+        "title": "A Head Full of Ghosts",
+        "author": "Paul Tremblay",
+        "genres": [
+            "Horror",
+            "Drama"
+        ],
+        "description": "A modern family's struggle with a supposedly possessed teenage daughter is filmed for reality TV. Psychologically ambiguous.",
+        "mood": "mysterious",
+        "pages": 286
+    },
+    {
+        "title": "Bird Box",
+        "author": "Josh Malerman",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "description": "Survivors must navigate blindly in a world where seeing unseen creatures drives you to lethal madness. Pulse-pounding.",
+        "mood": "epic",
+        "pages": 262
+    },
+    {
+        "title": "House of Leaves",
+        "author": "Mark Z. Danielewski",
+        "genres": [
+            "Horror",
+            "Mystery"
+        ],
+        "description": "A family finds that their house is impossibly larger on the inside than the outside. Experiential and terrifying.",
+        "mood": "dark",
+        "pages": 709
+    },
+    {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "A young girl navigates life in Nazi Germany, narrated by Death. Poignant and beautiful.",
+        "mood": "uplifting",
+        "pages": 552
+    },
+    {
+        "title": "Wolf Hall",
+        "author": "Hilary Mantel",
+        "genres": [
+            "Historical Fiction",
+            "Biography"
+        ],
+        "description": "The rise of Thomas Cromwell in the court of Henry VIII. Intricate political maneuvering.",
+        "mood": "epic",
+        "pages": 653
+    },
+    {
+        "title": "Pillars of the Earth",
+        "author": "Ken Follett",
+        "genres": [
+            "Historical Fiction",
+            "Drama",
+            "Adventure"
+        ],
+        "description": "The multi-generational saga of the building of a cathedral in 12th-century England. Sweeping and dramatic.",
+        "mood": "epic",
+        "pages": 976
+    },
+    {
+        "title": "All the Light We Cannot See",
+        "author": "Anthony Doerr",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "A blind French girl and a German boy's paths collide during World War II. Gorgeous prose.",
+        "mood": "mysterious",
+        "pages": 531
+    },
+    {
+        "title": "The Nightingale",
+        "author": "Kristin Hannah",
+        "genres": [
+            "Historical Fiction",
+            "Romance"
+        ],
+        "description": "Two sisters take remarkably different paths to survive in German-occupied, war-torn France.",
+        "mood": "uplifting",
+        "pages": 440
+    },
+    {
+        "title": "The Tattooist of Auschwitz",
+        "author": "Heather Morris",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "The true story of the Jewish man tasked with tattooing prisoner numbers at Auschwitz. Unfllinchingly moving.",
+        "mood": "dark",
+        "pages": 273
+    },
+    {
+        "title": "Memoirs of a Geisha",
+        "author": "Arthur Golden",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "The life of a young girl sold into servitude who becomes a renowned geisha in Kyoto. Vividly imagined.",
+        "mood": "romantic",
+        "pages": 503
+    },
+    {
+        "title": "The Kite Runner",
+        "author": "Khaled Hosseini",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "A sweeping narrative of two friends spanning decades of turbulent Afghan history.",
+        "mood": "dark",
+        "pages": 371
+    },
+    {
+        "title": "Circe",
+        "author": "Madeline Miller",
+        "genres": [
+            "Historical Fiction",
+            "Fantasy"
+        ],
+        "description": "A fierce reimagining of the life of the mythical witch from Homer's Odyssey.",
+        "mood": "mysterious",
+        "pages": 393
+    },
+    {
+        "title": "Homegoing",
+        "author": "Yaa Gyasi",
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "description": "The descendants of two half-sisters navigate centuries of racism and slavery spanning continents. Ambitious and essential.",
+        "mood": "epic",
+        "pages": 305
+    },
+    {
+        "title": "The Girl on the Train",
+        "author": "Paula Hawkins",
+        "genres": [
+            "Thriller",
+            "Mystery"
+        ],
+        "description": "A divorced woman's obsession with a couple on her train ride turns deadly. An unreliable narrator masterpiece.",
+        "mood": "dark",
+        "pages": 316
+    },
+    {
+        "title": "The Da Vinci Code",
+        "author": "Dan Brown",
+        "genres": [
+            "Thriller",
+            "Mystery"
+        ],
+        "description": "A symbologist must decipher a murder mystery embedded in Da Vinci's paintings. Fast-paced historical conspiracy.",
+        "mood": "epic",
+        "pages": 489
+    },
+    {
+        "title": "Gone Girl",
+        "author": "Gillian Flynn",
+        "genres": [
+            "Thriller",
+            "Mystery",
+            "Drama"
+        ],
+        "description": "A complex psychological thriller exploring the dissolution of a toxic marriage. Full of massive twists.",
+        "mood": "mysterious",
+        "pages": 415
+    },
+    {
+        "title": "The Silence of the Lambs",
+        "author": "Thomas Harris",
+        "genres": [
+            "Thriller",
+            "Horror"
+        ],
+        "description": "An FBI trainee relies on a brilliant cannibalistic killer to catch another. Suspenseful and iconic.",
+        "mood": "dark",
+        "pages": 338
+    },
+    {
+        "title": "Verity",
+        "author": "Colleen Hoover",
+        "genres": [
+            "Thriller",
+            "Romance"
+        ],
+        "description": "A struggling writer uncovers chilling secrets when she finishes the novels of a paralyzed author. Wildly twisty.",
+        "mood": "dark",
+        "pages": 314
+    },
+    {
+        "title": "Dark Matter",
+        "author": "Blake Crouch",
+        "genres": [
+            "Thriller",
+            "Science Fiction"
+        ],
+        "description": "A physics professor is abducted and thrown into an alternate version of his life. A mind-bending pursuit.",
+        "mood": "epic",
+        "pages": 342
+    },
+    {
+        "title": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "genres": [
+            "Thriller",
+            "Mystery"
+        ],
+        "description": "A criminal psychotherapist determined to get a woman who murdered her husband to speak. Jaw-dropping finale.",
+        "mood": "mysterious",
+        "pages": 336
+    },
+    {
+        "title": "Before I Go to Sleep",
+        "author": "S.J. Watson",
+        "genres": [
+            "Thriller",
+            "Mystery"
+        ],
+        "description": "A woman wakes up every day with no memory. She starts realizing her life is a lie.",
+        "mood": "dark",
+        "pages": 359
+    },
+    {
+        "title": "Behind Closed Doors",
+        "author": "B.A. Paris",
+        "genres": [
+            "Thriller",
+            "Drama"
+        ],
+        "description": "To the world they are the perfect couple, but behind closed doors lies a terrifying reality.",
+        "mood": "dark",
+        "pages": 352
+    },
+    {
+        "title": "The Wife Between Us",
+        "author": "Greer Hendricks",
+        "genres": [
+            "Thriller",
+            "Mystery"
+        ],
+        "description": "A jealous ex-wife seemingly stalks her replacement. Expect the unexpected in this clever thriller.",
+        "mood": "mysterious",
+        "pages": 346
+    },
+    {
+        "title": "Jane Eyre",
+        "author": "Charlotte Bront\u00eb",
+        "genres": [
+            "Classic Literature",
+            "Romance"
+        ],
+        "description": "An orphaned governess finds love but discovers a dark secret in the attic. A quintessential gothic novel.",
+        "mood": "romantic",
+        "pages": 500
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "genres": [
+            "Classic Literature",
+            "Science Fiction"
+        ],
+        "description": "A terrifying look into a totalitarian future where surveillance is absolute. Startlingly prophetic.",
+        "mood": "dark",
+        "pages": 328
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genres": [
+            "Classic Literature",
+            "Drama"
+        ],
+        "description": "A timeless exploration of human decency and racial prejudice. Seen through innocent eyes.",
+        "mood": "uplifting",
+        "pages": 281
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genres": [
+            "Classic Literature",
+            "Romance"
+        ],
+        "description": "The clash between pride and prejudice in the English countryside. Sparkling wit and charm.",
+        "mood": "cosy",
+        "pages": 279
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genres": [
+            "Classic Literature",
+            "Drama"
+        ],
+        "description": "A tragic, beautiful tale of wealthy socialites during the roaring twenties. A critique of the American Dream.",
+        "mood": "mysterious",
+        "pages": 180
+    },
+    {
+        "title": "Moby-Dick",
+        "author": "Herman Melville",
+        "genres": [
+            "Classic Literature",
+            "Adventure"
+        ],
+        "description": "Captain Ahab's obsessive, doomed quest to kill the great white whale. Massive and philosophical.",
+        "mood": "epic",
+        "pages": 720
+    },
+    {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "genres": [
+            "Classic Literature",
+            "Science Fiction"
+        ],
+        "description": "A dystopian look at a mechanically stabilized society driven by mindless pleasure. Deeply unsettling.",
+        "mood": "dark",
+        "pages": 268
+    },
+    {
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "genres": [
+            "Classic Literature",
+            "Thriller"
+        ],
+        "description": "A poor student murders a pawnbroker and suffers profound psychological guilt. Intense and dense.",
+        "mood": "dark",
+        "pages": 671
+    },
+    {
+        "title": "Wuthering Heights",
+        "author": "Emily Bront\u00eb",
+        "genres": [
+            "Classic Literature",
+            "Romance"
+        ],
+        "description": "The wild, destructive love affair between Heathcliff and Catherine on the Yorkshire moors. Completely savage romance.",
+        "mood": "dark",
+        "pages": 416
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "genres": [
+            "Classic Literature",
+            "Drama"
+        ],
+        "description": "Aimless adolescent Holden Caulfield wanders New York City battling angst and alienation.",
+        "mood": "mysterious",
+        "pages": 234
+    },
+    {
+        "title": "Good Omens",
+        "author": "Terry Pratchett & Neil Gaiman",
+        "genres": [
+            "Comedy",
+            "Fantasy"
+        ],
+        "description": "An angel and a demon collaborate to stop the end times. Absolutely spectacular British humor.",
+        "mood": "cosy",
+        "pages": 412
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "genres": [
+            "Comedy",
+            "Science Fiction"
+        ],
+        "description": "Earth is destroyed to make way for a bypass, and Arthur Dent hitchhikes across space. Masterful silliness.",
+        "mood": "epic",
+        "pages": 193
+    },
+    {
+        "title": "Bridget Jones's Diary",
+        "author": "Helen Fielding",
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "description": "A year in the life of a thirty-something single working woman in London. Deeply relatable and funny.",
+        "mood": "cosy",
+        "pages": 288
+    },
+    {
+        "title": "Catch-22",
+        "author": "Joseph Heller",
+        "genres": [
+            "Comedy",
+            "Historical Fiction"
+        ],
+        "description": "A frantic, hilarious critique of military bureaucracy during WWII. Insanely brilliant.",
+        "mood": "epic",
+        "pages": 453
+    },
+    {
+        "title": "A Confederacy of Dunces",
+        "author": "John Kennedy Toole",
+        "genres": [
+            "Comedy",
+            "Classic Literature"
+        ],
+        "description": "The bizarre adventures of the lazy, slovenly intellectual Ignatius J. Reilly in New Orleans.",
+        "mood": "mysterious",
+        "pages": 405
+    },
+    {
+        "title": "Bossypants",
+        "author": "Tina Fey",
+        "genres": [
+            "Comedy",
+            "Biography"
+        ],
+        "description": "The hilarious autobiographical life story of the renowned SNL comedian. Insightful and self-deprecating.",
+        "mood": "uplifting",
+        "pages": 277
+    },
+    {
+        "title": "Me Talk Pretty One Day",
+        "author": "David Sedaris",
+        "genres": [
+            "Comedy",
+            "Biography"
+        ],
+        "description": "Absurdly funny essays about the author's eccentric family and his move to Paris. Exquisitely observed.",
+        "mood": "cosy",
+        "pages": 272
+    },
+    {
+        "title": "Three Men in a Boat",
+        "author": "Jerome K. Jerome",
+        "genres": [
+            "Comedy",
+            "Classic Literature",
+            "Adventure"
+        ],
+        "description": "Three bumbling gentlemen and a dog take a boating holiday on the Thames. Timeless slapstick humor.",
+        "mood": "uplifting",
+        "pages": 185
+    },
+    {
+        "title": "Where'd You Go, Bernadette",
+        "author": "Maria Semple",
+        "genres": [
+            "Comedy",
+            "Mystery"
+        ],
+        "description": "A fiercely intelligent, severely agoraphobic mother vanishes, leaving her teenager to track her down.",
+        "mood": "mysterious",
+        "pages": 330
+    },
+    {
+        "title": "Crazy Rich Asians",
+        "author": "Kevin Kwan",
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "description": "An American professor discovers her boyfriend is the heir to a massive Singaporean fortune. Glitzy and hilarious.",
+        "mood": "uplifting",
+        "pages": 403
+    },
+    {
+        "title": "Educated",
+        "author": "Tara Westover",
+        "genres": [
+            "Biography",
+            "Drama"
+        ],
+        "description": "A woman raised by survivalist parents escapes via an incredible quest for education. Soaringly triumphant.",
+        "mood": "uplifting",
+        "pages": 334
+    },
+    {
+        "title": "Becoming",
+        "author": "Michelle Obama",
+        "genres": [
+            "Biography"
+        ],
+        "description": "The intimate and inspiring memoir of the former First Lady of the United States. Honest and deeply personal.",
+        "mood": "uplifting",
+        "pages": 426
+    },
+    {
+        "title": "The Diary of a Young Girl",
+        "author": "Anne Frank",
+        "genres": [
+            "Biography",
+            "Historical Fiction"
+        ],
+        "description": "The moving diary of a Jewish girl hiding from the Nazis in Amsterdam. An essential historical document.",
+        "mood": "dark",
+        "pages": 283
+    },
+    {
+        "title": "Steve Jobs",
+        "author": "Walter Isaacson",
+        "genres": [
+            "Biography"
+        ],
+        "description": "The comprehensive biography of the passionate, demanding Apple co-founder.",
+        "mood": "epic",
+        "pages": 656
+    },
+    {
+        "title": "Trevor Noah: Born a Crime",
+        "author": "Trevor Noah",
+        "genres": [
+            "Biography",
+            "Comedy"
+        ],
+        "description": "The captivating story of comedian Trevor Noah growing up in South Africa under apartheid. Hilarious yet poignant.",
+        "mood": "uplifting",
+        "pages": 288
+    },
+    {
+        "title": "I Know Why the Caged Bird Sings",
+        "author": "Maya Angelou",
+        "genres": [
+            "Biography",
+            "Classic Literature"
+        ],
+        "description": "A lyrical memoir of the acclaimed poet's early years facing intense racism and trauma.",
+        "mood": "uplifting",
+        "pages": 289
+    },
+    {
+        "title": "Shoe Dog",
+        "author": "Phil Knight",
+        "genres": [
+            "Biography",
+            "Drama"
+        ],
+        "description": "The deeply engaging story of how Nike was founded by a passionate, relentless underdog.",
+        "mood": "epic",
+        "pages": 400
+    },
+    {
+        "title": "Alexander Hamilton",
+        "author": "Ron Chernow",
+        "genres": [
+            "Biography",
+            "Historical Fiction"
+        ],
+        "description": "The massive, gripping biography of America's brilliant, flawed founding father. Inspiration for the musical.",
+        "mood": "epic",
+        "pages": 818
+    },
+    {
+        "title": "Into the Wild",
+        "author": "Jon Krakauer",
+        "genres": [
+            "Biography",
+            "Adventure"
+        ],
+        "description": "The tragic journey of a young idealist who abandoned everything to walk into the Alaskan wilderness.",
+        "mood": "dark",
+        "pages": 320
+    },
+    {
+        "title": "The Glass Castle",
+        "author": "Jeannette Walls",
+        "genres": [
+            "Biography",
+            "Drama"
+        ],
+        "description": "A remarkable memoir of resilience growing up with brilliant but deeply dysfunctional parents.",
+        "mood": "uplifting",
+        "pages": 288
+    }
+]
