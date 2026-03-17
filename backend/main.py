@@ -300,20 +300,19 @@ def login(req: LoginRequest):
 
 @app.post("/recommend", response_model=List[Book])
 def recommend(req: RecommendRequest):
-    """
-    Replicates the genre-selection + recommendation logic from pages/1_Home.py exactly.
-
-    Validation:
-        if len(selected_genres) > 3:   → error (mirrors "MAX 3 GENRES.")
-        if len(selected_genres) == 0:  → empty list
-    """
     if len(req.genres) > 3:
         raise HTTPException(status_code=400, detail="MAX 3 GENRES.")
     if len(req.genres) == 0:
         return []
 
-    top_10 = _get_recommendations(req.genres)
-    return top_10
+    scored_books = [(b, _match_score(b, req.genres)) for b in BOOKS]
+    filtered_books = [b for b, s in scored_books if s > 0]
+    
+    # Sort results so books matching MORE of the selected genres appear first
+    filtered_books.sort(key=lambda x: _match_score(x, req.genres), reverse=True)
+    
+    # Limit the final response to maximum 20 books
+    return filtered_books[:20]
 
 
 # --- TRACKER ---
