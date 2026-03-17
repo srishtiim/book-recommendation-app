@@ -81,6 +81,10 @@ class RecommendRequest(BaseModel):
     genres: List[str]
     user_id: str  # kept for future personalisation; not used in scoring yet
 
+class SearchRequest(BaseModel):
+    query: str
+    user_id: str
+
 class Book(BaseModel):
     title: str
     author: str
@@ -314,6 +318,21 @@ def recommend(req: RecommendRequest):
     # Limit the final response to maximum 20 books
     return filtered_books[:20]
 
+
+@app.post("/search", response_model=List[Book])
+def search(req: SearchRequest):
+    query = req.query.strip().lower()
+    if not query or len(query) < 2:
+        return []
+
+    matches = []
+    for book in BOOKS:
+        title = book.get("title", "").lower()
+        author = book.get("author", "").lower()
+        if query in title or query in author:
+            matches.append(book)
+            
+    return matches[:20]
 
 # --- TRACKER ---
 
