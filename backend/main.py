@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import json
 import os
 from datetime import datetime, date, timedelta
@@ -5,7 +8,6 @@ from pathlib import Path
 from typing import List, Optional
 
 import uvicorn
-from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -15,15 +17,14 @@ from supabase import create_client, Client
 # Environment & Supabase client
 # ---------------------------------------------------------------------------
 
-load_dotenv()
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-if not SUPABASE_URL or not SUPABASE_KEY:
-    raise RuntimeError("SUPABASE_URL and SUPABASE_KEY must be set in .env")
-
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+try:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+except Exception as e:
+    print(f"Warning: Failed to initialize Supabase client - {e}")
+    supabase = None  # type: ignore
 
 # ---------------------------------------------------------------------------
 # Load book datasets once at startup (mirrors @st.cache_data in Streamlit)
