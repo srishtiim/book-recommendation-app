@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import FairyLights from '../components/FairyLights'
 import Posters from '../components/Posters'
 import VinylRecords from '../components/VinylRecords'
+import HamburgerMenu from '../components/HamburgerMenu'
 import { getUser } from '../App'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
@@ -21,6 +22,7 @@ export default function Tracker() {
 
   const [trackedBooks, setTrackedBooks] = useState([])
   const [addTitle, setAddTitle] = useState('')
+  const [addAuthor, setAddAuthor] = useState('')
   const [saving, setSaving] = useState(false)
   const [error, setError]   = useState('')
 
@@ -33,6 +35,7 @@ export default function Tracker() {
     const incoming = stateBook ?? lsBook
     if (incoming?.title) {
       setAddTitle(incoming.title)
+      if (incoming.author) setAddAuthor(incoming.author)
       localStorage.removeItem('ashveil_selected_book')
       addInputRef.current?.focus()
     }
@@ -49,6 +52,7 @@ export default function Tracker() {
 
   const handleAdd = async () => {
     const title = addTitle.trim()
+    const author = addAuthor.trim()
     if (!title) return
     setSaving(true); setError('')
     try {
@@ -59,26 +63,29 @@ export default function Tracker() {
           user_id: user.user_id,
           book_title: title,
           action: 'add',
-          status: 'WANT TO READ',
-          date_started: new Date().toISOString().split('T')[0],
-          pages_read: 0, rating: 0, notes: '',
+          author: author || undefined,
         }),
       })
       if (!res.ok) { const d = await res.json(); throw new Error(d.detail) }
       // Optimistic update
       setTrackedBooks(prev => [...prev, {
-        book_title: title, status: 'WANT TO READ', pages_read: 0,
+        book_title: title,
+        author: author,
+        rating: 0,
+        notes: ''
       }])
       setAddTitle('')
+      setAddAuthor('')
     } catch (err) { setError(err.message) }
     finally { setSaving(false) }
   }
 
   const handleKeyDown = e => { if (e.key === 'Enter') handleAdd() }
 
-  const handleUpdatePages = async (book, pages) => {
+  const handleUpdate = async (book, updates) => {
+    const updatedBook = { ...book, ...updates }
     setTrackedBooks(prev => prev.map(b =>
-      b.book_title === book.book_title ? { ...b, pages_read: pages } : b
+      b.book_title === book.book_title ? updatedBook : b
     ))
     try {
       await fetch(`${API}/tracker`, {
@@ -88,13 +95,11 @@ export default function Tracker() {
           user_id: user.user_id,
           book_title: book.book_title,
           action: 'update',
-          status: book.status,
-          pages_read: pages,
-          rating: book.rating ?? 0,
-          notes: book.notes ?? '',
+          rating: updatedBook.rating ?? 0,
+          notes: updatedBook.notes ?? '',
         }),
       })
-    } catch { /* silent — optimistic */ }
+    } catch { /* silent */ }
   }
 
   const handleRemove = async book => {
@@ -112,35 +117,12 @@ export default function Tracker() {
     } catch { /* silent */ }
   }
 
-  const handleStatusChange = async (book, newStatus) => {
-    setTrackedBooks(prev => prev.map(b =>
-      b.book_title === book.book_title ? { ...b, status: newStatus } : b
-    ))
-    try {
-      await fetch(`${API}/tracker`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: user.user_id,
-          book_title: book.book_title,
-          action: 'update',
-          status: newStatus,
-          pages_read: book.pages_read ?? 0,
-          rating: book.rating ?? 0,
-          notes: book.notes ?? '',
-          date_ended: newStatus === 'FINISHED' ? new Date().toISOString().split('T')[0] : null,
-        }),
-      })
-    } catch { /* silent */ }
-  }
-
-  const statusLabels = { 'WANT TO READ': 'Want', 'READING NOW': 'Reading', 'FINISHED': 'Done' }
-
   return (
     <div className="page-wrap">
       <FairyLights />
       <Posters />
       <VinylRecords />
+      <HamburgerMenu />
 
       <div className="page-content">
         {/* Back link */}
@@ -157,14 +139,23 @@ export default function Tracker() {
           <p className="journal-sub">Your private collection of titles.</p>
 
           {/* Add row */}
-          <div className="journal-add-row">
+          <div className="journal-add-row" style={{ display: 'flex', gap: '10px' }}>
             <input
               ref={addInputRef}
               className="journal-add-input"
+              style={{ flex: 1 }}
               value={addTitle}
               onChange={e => setAddTitle(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Add a book title…"
+            />
+            <input
+              className="journal-add-input"
+              style={{ flex: 1 }}
+              value={addAuthor}
+              onChange={e => setAddAuthor(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Author (optional)"
             />
             <button className="journal-add-btn" onClick={handleAdd} disabled={saving}>
               {saving ? '…' : 'Add'}
@@ -186,34 +177,52 @@ export default function Tracker() {
             <div
               key={book.book_title}
               className="journal-entry"
-              style={{ animationDelay: `${i * 60}ms` }}
+              style={{ animationDelay: `${i * 60}ms`, display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}
             >
               <span className="entry-index">{i + 1}.</span>
-              <span className="entry-title">{book.book_title}</span>
+              <span className="entry-title" style={{ flex: '1 1 200px', fontWeight: 'bold' }}>{book.book_title}</span>
+              
+              <span className="entry-author" style={{ flex: '1 1 150px', fontSize: '0.85rem', color: '#666', fontStyle: 'italic' }}>
+                {book.author ? `by ${book.author}` : ''}
+              </span>
 
-              {/* Status badge — cycles through states on click */}
-              <button
-                className="entry-status-badge"
-                title="Click to change status"
-                onClick={() => {
-                  const cycle = ['WANT TO READ', 'READING NOW', 'FINISHED']
-                  const next = cycle[(cycle.indexOf(book.status) + 1) % cycle.length]
-                  handleStatusChange(book, next)
+              {/* Rating 1-5 */}
+              <select
+                className="entry-rating"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(107,80,48,0.3)',
+                  borderRadius: '4px',
+                  padding: '2px 4px',
+                  color: 'var(--ink-color)',
+                  fontFamily: 'inherit'
                 }}
+                value={book.rating ?? 0}
+                onChange={e => handleUpdate(book, { rating: Number(e.target.value) })}
               >
-                {statusLabels[book.status] ?? book.status}
-              </button>
+                <option value={0}>No rating</option>
+                <option value={1}>1 Star</option>
+                <option value={2}>2 Stars</option>
+                <option value={3}>3 Stars</option>
+                <option value={4}>4 Stars</option>
+                <option value={5}>5 Stars</option>
+              </select>
 
-              {/* Pages read number input */}
+              {/* Notes */}
               <input
-                type="number"
-                className="entry-pages"
-                min={0}
-                value={book.pages_read ?? 0}
-                onChange={e => handleUpdatePages(book, Number(e.target.value))}
-                title="Pages read"
+                className="entry-notes"
+                style={{
+                  flex: '2 1 200px',
+                  background: 'transparent',
+                  border: 'none',
+                  borderBottom: '1px dashed rgba(107,80,48,0.3)',
+                  color: 'var(--ink-color)',
+                  fontFamily: 'inherit'
+                }}
+                placeholder="Notes..."
+                value={book.notes ?? ''}
+                onChange={e => handleUpdate(book, { notes: e.target.value })}
               />
-              <span style={{ fontSize: '0.7rem', color: 'rgba(107,80,48,0.5)' }}>pg</span>
 
               <button className="entry-remove" onClick={() => handleRemove(book)} title="Remove">✕</button>
             </div>

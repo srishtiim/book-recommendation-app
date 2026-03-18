@@ -101,6 +101,23 @@ class TrackerSaveRequest(BaseModel):
     rating: Optional[int] = 0
     notes: Optional[str] = ""
 
+class ParlourRecordCreate(BaseModel):
+    user_id: str
+    book_title: str
+    author: str
+    genre: str
+    status: str
+    pages_total: Optional[int] = 300
+
+class ParlourRecordUpdate(BaseModel):
+    status: Optional[str] = None
+    rating: Optional[int] = None
+    review: Optional[str] = None
+    start_date: Optional[str] = None
+    finish_date: Optional[str] = None
+    pages_read: Optional[int] = None
+    reread_count: Optional[int] = None
+
 # ---------------------------------------------------------------------------
 # Helper: exact recommendation logic from 1_Home.py
 # ---------------------------------------------------------------------------
@@ -289,7 +306,202 @@ def save_tracker(req: TrackerSaveRequest):
 
     raise HTTPException(status_code=400, detail="action must be 'add', 'update', or 'remove'.")
 
+# --- PARLOUR ---
 
+@app.get("/parlour/{user_id}")
+def get_parlour(user_id: str):
+    try:
+        resp = supabase.table("user_records").select("*").eq("user_id", user_id).order("updated_at", desc=True).execute()
+        records = resp.data
+        
+        status_counts = {}
+        for r in records:
+            status_counts[r["status"]] = status_counts.get(r["status"], 0) + 1
+        
+        rated = [r["rating"] for r in records if r.get("rating")]
+        avg_rating = sum(rated)/len(rated) if rated else 0
+        
+        return {
+            "records": records,
+            "summary": {
+                "total_books": len(records),
+                "total_by_status": status_counts,
+                "avg_rating": round(avg_rating, 1)
+            }
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/parlour/record")
+def create_parlour_record(req: ParlourRecordCreate):
+    try:
+        data = {
+            "user_id": req.user_id,
+            "book_title": req.book_title,
+            "author": req.author,
+            "genre": req.genre,
+            "status": req.status,
+            "pages_total": req.pages_total
+        }
+        res = supabase.table("user_records").insert(data).execute()
+        rec_id = res.data[0]["id"]
+        
+        diary_entry = {
+            "user_id": req.user_id,
+            "record_id": rec_id,
+            "event_type": "added",
+            "event_date": datetime.now().isoformat()
+        }
+        supabase.table("reading_diary").insert(diary_entry).execute()
+        return res.data[0]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/parlour/record/{record_id}")
+def get_parlour_record(record_id: str):
+    try:
+        res = supabase.table("user_records").select("*").eq("id", record_id).execute()
+        if not res.data:
+            raise HTTPException(status_code=404, detail="Not found")
+        return res.data[0]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.put("/parlour/record/{record_id}")
+def update_parlour_record(record_id: str, req: ParlourRecordUpdate):
+    try:
+        current_res = supabase.table("user_records").select("*").eq("id", record_id).execute()
+        if not current_res.data:
+            raise HTTPException(status_code=404, detail="Not found")
+        current = current_res.data[0]
+        
+        req_data = req.dict(exclude_unset=True)
+        if not req_data:
+            return current
+
+        update_data = {}
+        for k, v in req_data.items():
+            update_data[k] = v
+        update_data["updated_at"] = datetime.now().isoformat()
+                
+        # Handle business logic
+        new_status = update_data.get("status")
+        old_status = current.get("status")
+        
+        if new_status and new_status != old_status:
+            # if status changes to now_spinning and start is null -> auto-set start
+            if new_status == "now_spinning" and not current.get("start_date") and not update_data.get("start_date"):
+                update_data["start_date"] = date.today().isoformat()
+            
+            # if status changes to played and finish is null -> auto-set finish
+            if new_status == "played" and not current.get("finish_date") and not update_data.get("finish_date"):
+                update_data["finish_date"] = date.today().isoformat()
+
+            diary_event = None
+            if new_status == "played":
+                diary_event = "finished"
+            elif new_status == "now_spinning":
+                # if reread > 0, reread event
+                reread = update_data.get("reread_count", current.get("reread_count", 0))
+                if reread > 0:
+                    diary_event = "reread"
+                elif old_status == "want_it" or not old_status:
+                    diary_event = "started"
+            elif new_status == "shelved":
+                diary_event = "shelved"
+
+            if diary_event:
+                supabase.table("reading_diary").insert({
+                    "user_id": current["user_id"],
+                    "record_id": record_id,
+                    "event_type": diary_event,
+                    "event_date": datetime.now().isoformat()
+                }).execute()
+
+        else:
+            # Check for reread manual toggle
+            reread_new = update_data.get("reread_count")
+            reread_old = current.get("reread_count", 0)
+            if reread_new is not None and reread_new > reread_old:
+                supabase.table("reading_diary").insert({
+                    "user_id": current["user_id"],
+                    "record_id": record_id,
+                    "event_type": "reread",
+                    "event_date": datetime.now().isoformat()
+                }).execute()
+        
+        res = supabase.table("user_records").update(update_data).eq("id", record_id).execute()
+        return res.data[0]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/parlour/record/{record_id}")
+def delete_parlour_record(record_id: str):
+    try:
+        supabase.table("user_records").delete().eq("id", record_id).execute()
+        return {"success": True}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/parlour/stats/{user_id}")
+def get_parlour_stats(user_id: str):
+    try:
+        records = supabase.table("user_records").select("*").eq("user_id", user_id).execute().data
+        
+        books_by_genre = {}
+        books_by_status = {}
+        total_pages = 0
+        rated_sum = 0
+        rated_count = 0
+        
+        for r in records:
+            g = r.get("genre", "Unknown")
+            s = r.get("status", "want_it")
+            books_by_genre[g] = books_by_genre.get(g, 0) + 1
+            books_by_status[s] = books_by_status.get(s, 0) + 1
+            if r.get("status") == "played":
+                total_pages += r.get("pages_total") or 300
+            else:
+                total_pages += r.get("pages_read") or 0
+                
+            if r.get("rating"):
+                rated_sum += r["rating"]
+                rated_count += 1
+                
+        avg_rating = 0
+        if rated_count > 0:
+            avg_rating = round(rated_sum/rated_count, 1)
+
+        awards = {}
+        for g, count in books_by_genre.items():
+            if count >= 25:
+                awards[g] = "platinum"
+            elif count >= 10:
+                awards[g] = "gold"
+            elif count >= 5:
+                awards[g] = "silver"
+            elif count >= 3:
+                awards[g] = "bronze"
+
+        sorted_books = sorted(records, key=lambda x: x.get("rating") or 0, reverse=True)
+        top_10 = [b for b in sorted_books if b.get("rating")][:10]
+
+        top_genre = "None"
+        if books_by_genre:
+            top_genre = max(books_by_genre, key=books_by_genre.get)
+
+        return {
+            "total_books": len(records),
+            "total_pages": total_pages,
+            "avg_rating": avg_rating,
+            "top_genre": top_genre,
+            "books_by_genre": books_by_genre,
+            "books_by_status": books_by_status,
+            "top_rated_books": top_10,
+            "awards": awards
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ---------------------------------------------------------------------------
 # Entry point

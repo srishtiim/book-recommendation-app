@@ -5,7 +5,9 @@ export function CardRuledLines({ count = 8, startY = 50 }) {
   ))
 }
 
-export default function RecommendationCards({ books, onTrack }) {
+export default function RecommendationCards({ books, onTrack, stampType = 'recommended' }) {
+  const isFound = stampType === 'found'
+
   return (
     <div className="rec-grid">
       {books.map((book, idx) => {
@@ -22,8 +24,10 @@ export default function RecommendationCards({ books, onTrack }) {
 
             <div className="card-toprow">
               <span className="card-number">No. {num}</span>
-              <div className="card-stamp">
-                <span className="card-stamp-text">REC&shy;OM&shy;MEND&shy;ED</span>
+              <div className="card-stamp" style={isFound ? { borderColor: 'rgba(42,74,53,0.45)' } : {}}>
+                <span className="card-stamp-text" style={isFound ? { color: 'rgba(42,74,53,0.7)', fontSize: '9px', letterSpacing: '0.12em' } : {}}>
+                  {isFound ? 'FOUND' : 'REC\u00ADOM\u00ADMEND\u00ADED'}
+                </span>
               </div>
             </div>
 

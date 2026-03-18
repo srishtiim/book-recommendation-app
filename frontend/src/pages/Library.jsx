@@ -5,6 +5,7 @@ import Posters from '../components/Posters'
 import VinylRecords from '../components/VinylRecords'
 import BookShelf from '../components/BookShelf'
 import RecommendationCards from '../components/RecommendationCards'
+import HamburgerMenu from '../components/HamburgerMenu'
 import { getUser } from '../App'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
@@ -96,6 +97,7 @@ export default function Library() {
       <FairyLights />
       <Posters />
       <VinylRecords />
+      <HamburgerMenu />
 
       <div className="page-content">
         <h1 className="lib-heading">The Reading Room</h1>

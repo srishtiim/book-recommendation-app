@@ -5,6 +5,8 @@ import Login from './pages/Login'
 import Entry from './pages/Entry'
 import Library from './pages/Library'
 import Tracker from './pages/Tracker'
+import Parlour from './pages/Parlour'
+import BookRecord from './pages/BookRecord'
 
 export const LightsContext = createContext({ lightsOn: true, toggleLights: () => {} })
 export const useLights = () => useContext(LightsContext)
@@ -37,6 +39,8 @@ export default function App() {
           <Route path="/entry"   element={<Entry />} />
           <Route path="/library" element={<ProtectedRoute><Library /></ProtectedRoute>} />
           <Route path="/tracker" element={<ProtectedRoute><Tracker /></ProtectedRoute>} />
+          <Route path="/parlour" element={<ProtectedRoute><Parlour /></ProtectedRoute>} />
+          <Route path="/parlour/book/:recordId" element={<ProtectedRoute><BookRecord /></ProtectedRoute>} />
           <Route path="*"        element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
